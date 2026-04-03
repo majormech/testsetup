@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DFD Supply Inventory · How-To Guide</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body data-page="how-to">
+    <div class="shell">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">DFD Supply</p>
+          <h1>How-To Guide</h1>
+          <p class="subtitle">Step-by-step instructions for common inventory workflows.</p>
+        </div>
+        <nav class="top-nav">
+          <a href="/index.html">Main Page</a>
+          <a href="/inventory.html">Inventory Actions</a>
+          <a href="/issue.html">Issue Page</a>
+          <a href="/restock.html">Restock Page</a>
+          <a href="/search.html">Search Page</a>
+        </nav>
+      </header>
+
+      <main class="layout">
+        <section class="panel stack wide">
+          <h2>Quick Navigation</h2>
+          <ul class="howto-toc">
+            <li><a href="#add-item">Add a new item</a></li>
+            <li><a href="#edit-item">Edit an existing item</a></li>
+            <li><a href="#issue-items">Issue items to a station</a></li>
+            <li><a href="#restock-items">Restock existing inventory</a></li>
+            <li><a href="#search-usage">Search usage and export reports</a></li>
+          </ul>
+        </section>
+
+        <section id="add-item" class="panel stack wide howto-section">
+          <h2>1) Add a new item to inventory</h2>
+          <ol>
+            <li>Open <strong>Inventory Actions</strong> from the top navigation.</li>
+            <li>Scan or generate a unique QR code for the new item type.</li>
+            <li>Optionally scan barcode(s), or keep <strong>Skip barcode scan</strong> enabled.</li>
+            <li>Enter item details: name, quantity, low-stock level, and optional cost/description/SKU.</li>
+            <li>Set date/time and <strong>Completed by</strong> information.</li>
+           <li>Click <strong>Add item</strong> to show the summary, confirm the review checkbox, then click <strong>Add item</strong> again to submit.</li>
+          </ol>
+          <p class="helper">Tip: Use clear, consistent item names so search and reports remain clean.</p>
+        </section>
+
+        <section id="edit-item" class="panel stack wide howto-section">
+          <h2>2) Edit an existing item</h2>
+          <ol>
+            <li>Go to the <strong>Main Page</strong>.</li>
+            <li>Use the item search box to find the item quickly by name or SKU.</li>
+            <li>Select the item's edit action and update needed fields (name, SKU, costs, stock settings, codes).</li>
+            <li>Save changes and confirm the success message.</li>
+          </ol>
+          <p class="helper">Tip: Keep SKU and QR values unique to avoid update conflicts.</p>
+        </section>
+
+        <section id="issue-items" class="panel stack wide howto-section">
+          <h2>3) Issue items to stations</h2>
+          <ol>
+            <li>Open the <strong>Issue Page</strong> to view station requests.</li>
+            <li>Select a station with active requests (highlighted in red).</li>
+            <li>Issue requested items by selecting/scanning the correct inventory items and quantities.</li>
+            <li>Confirm completion to record transaction history and reduce main inventory totals.</li>
+          </ol>
+          <p class="helper">Tip: Review remaining quantities in station requests before finalizing.</p>
+        </section>
+
+        <section id="restock-items" class="panel stack wide howto-section">
+          <h2>4) Restock existing items</h2>
+          <ol>
+            <li>Open the <strong>Restock Page</strong>.</li>
+            <li>Scan an item barcode or QR code to load item details.</li>
+            <li>If scanned by QR, optionally scan a new barcode to attach it to the item record.</li>
+            <li>Enter quantity being restocked and optional unit cost updates.</li>
+            <li>Enter date/time and <strong>Completed by</strong>, then submit the restock.</li>
+          </ol>
+          <p class="helper">Tip: Use notes for purchase order numbers or delivery references.</p>
+        </section>
+
+        <section id="search-usage" class="panel stack wide howto-section">
+          <h2>5) Search usage, trends, and exports</h2>
+          <ol>
+            <li>Open <strong>Search Page</strong>.</li>
+            <li>Choose a date range and optional filters (station, item, keywords).</li>
+            <li>Click <strong>Search</strong> to refresh item usage, station usage, and trend sections.</li>
+            <li>Pick an export format and click <strong>Download export</strong> for reporting.</li>
+          </ol>
+          <p class="helper">Tip: Use 30-day and 90-day views to compare short-term spikes vs longer trends.</p>
+        </section>
+      </main>
+    </div>
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>

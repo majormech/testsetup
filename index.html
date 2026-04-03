@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DFD Supply Inventory · Main</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body data-page="main">
+    <div class="shell">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">DFD Supply</p>
+          <h1>Main Inventory Snapshot</h1>
+          <p class="subtitle">Quick look at current stock levels across all items.</p>
+        </div>
+        <nav class="top-nav">
+          <a href="/restock.html">Restock Page</a>
+          <a href="/issue.html">Issue Page</a>
+          <a href="/inventory.html">Inventory Actions</a>
+          <a href="/search.html">Search & Usage</a>
+          <a href="/how-to.html">How-To Guide</a>
+        </nav>
+      </header>
+
+      <section class="panel stack wide">
+        <h2>Station Request Status</h2>
+        <p class="subtitle">Stations with pending place-in requests are highlighted in red. Stations with no pending requests are green.</p>
+        <div id="station-status-list" class="station-status-list"></div>
+      </section>
+
+      <section id="shopping-list-panel" class="panel stack wide shopping-list shopping-list--clear">
+        <h2>Shopping List</h2>
+        <p class="subtitle">Items below their minimum stock level are listed here.</p>
+        <div id="shopping-list-content" class="shopping-list__content"></div>
+      </section>
+
+      <section class="panel stack wide">
+        <div class="stats-row">
+          <strong id="total-item-count">0 items</strong>
+          <span id="total-stock-count">0 total units</span>
+        </div>
+        <label class="inventory-search" for="main-item-search">
+          Search items
+          <input
+            id="main-item-search"
+            type="search"
+            placeholder="Search by item name or SKU"
+            autocomplete="off"
+          />
+        </label>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Item</th><th>SKU</th><th>QR</th><th>In Stock</th><th>Unit Cost</th><th>Actions</th></tr>
+            </thead>
+            <tbody id="inventory-table"></tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Station 3 Supply Request</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body data-page="request" data-station="ST03">
+    <div class="shell slim">
+      <section class="panel stack wide">
+        <h1>Station 3 Inventory Request</h1>
+        <p class="subtitle">Submit requested inventory for this station.</p>
+        <div class="station-request-guide stack compact">
+          <h2>How to use this page</h2>
+          <ul>
+            <li><strong>Request items:</strong> Select <strong>Request item</strong>, add one or more items and quantities, then submit.</li>
+            <li><strong>Edit a request:</strong> Use <strong>Modify request</strong> on any open request to update item quantities or add/remove items.</li>
+            <li><strong>Cancel a request:</strong> Use <strong>Cancel request</strong> when a request is no longer needed (you will be asked who canceled it and why).</li>
+            <li><strong>Track progress:</strong> Requests update live as items are issued and when the request is completed.</li>
+          </ul>
+          <h3>Status color key</h3>
+          <ul class="request-color-legend">
+            <li><span class="legend-chip legend-chip--pending" aria-hidden="true"></span><strong>Red/Pink:</strong> Pending request (not fulfilled yet).</li>
+            <li><span class="legend-chip legend-chip--partial" aria-hidden="true"></span><strong>Yellow:</strong> Partially completed (some items issued, some still pending).</li>
+            <li><span class="legend-chip legend-chip--complete" aria-hidden="true"></span><strong>Green:</strong> Completed request (all requested items fulfilled).</li>
+            <li><span class="legend-chip legend-chip--canceled" aria-hidden="true"></span><strong>Gray:</strong> Canceled request.</li>
+          </ul>
+          <p class="helper"><strong>Modified tag:</strong> A <strong>Modified</strong> badge means the request was edited after it was first submitted. The request card includes the modification date/time, who made the update, and the reason entered during the edit.</p>
+        </div>
+        <div class="stack compact">
+          <button type="button" id="open-request-modal">Request item</button>
+          <div id="recent-requests" class="request-history-list"></div>
+        </div>
+      </section>
+    </div>
+    <div id="toast"></div>
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>
