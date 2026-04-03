@@ -1,0 +1,9 @@
+name = "dfd-supply"
+compatibility_date = "2026-03-23"
+pages_build_output_dir = "./public"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "dfd-supply"
+database_id = "7323e8e5-a251-4a1b-8975-3e78e8755aca"
+migrations_dir = "migrations"
