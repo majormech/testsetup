@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DFD Supply Inventory · Inventory Actions</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body data-page="inventory">
+    <div class="shell">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">DFD Supply</p>
+         <h1>Inventory Add Actions</h1>
+          <p class="subtitle">Create new inventory items with barcodes, QR codes, quantities, and costs.</p>
+        </div>
+        <nav class="top-nav">
+          <a href="/index.html">Main Page</a>
+          <a href="/search.html">Search Page</a>
+          <a href="/restock.html">Restock Page</a>
+          <a href="/issue.html">Issue Page</a>
+          <a href="/how-to.html">How-To Guide</a>
+        </nav>
+      </header>
+
+      <main class="layout">
+         <section class="panel stack wide">
+          <h2>Add new inventory item</h2>
+          <form id="add-item-form" class="stack compact">
+            <label>
+              Scan new item QR code (required)
+              <div class="input-with-action">
+                <input name="qrCode" id="add-item-qr" required placeholder="Scan unique item type QR code" />
+                <button type="button" id="add-item-generate-qr" class="secondary">Generate QR</button>
+              </div>
+            </label>
+            <section id="add-item-qr-preview" class="restock-followup hidden">
+              <h3>Generated QR preview</h3>
+              <p class="helper">Save or print this QR image for labeling this item.</p>
+              <a id="add-item-qr-download-link" href="#" target="_blank" rel="noopener noreferrer">
+                <img id="add-item-qr-preview-image" class="qr-thumb" alt="Generated QR code preview" />
+              </a>
+            </section>
+            <label class="checkbox-label">
+              <input type="checkbox" id="add-item-skip-barcode" checked />
+              Skip barcode scan (checked by default)
+            </label>
+            <label>Scan item barcode (optional, can add more later)<input name="barcodes" id="add-item-barcodes" placeholder="Scan barcode(s), separated by commas" /></label>
+            <label>Item name<input name="name" id="add-item-name" required /></label>
+            <label>Quantity being restocked<input name="totalQuantity" type="number" min="1" value="1" required /></label>
+            <label>Low stock / reorder level<input name="lowStockLevel" type="number" min="0" value="0" required /></label>
+            <label>Cost per unit (optional)<input name="unitCost" id="add-item-unit-cost" type="number" min="0" step="0.01" placeholder="0.00" /></label>
+            <label>Date and time<input name="performedAt" id="add-item-datetime" type="datetime-local" required /></label>
+            <label>Completed by (name or employee number)<input name="performedBy" id="add-item-performed-by" required placeholder="Name or employee #" /></label>
+            <label>Notes (optional)<input name="note" /></label>
+            <label>Description (optional)<input name="description" /></label>
+            <label>SKU (optional; auto-generated if blank)<input name="sku" placeholder="Optional custom SKU" /></label>
+            <section id="add-item-review" class="restock-followup hidden">
+              <h3>Review before submit</h3>
+              <div id="add-item-review-content" class="helper"></div>
+              <label class="checkbox-label">
+                <input type="checkbox" id="add-item-review-confirm" />
+                I reviewed this summary and want to submit it.
+              </label>
+            </section>
+            <div class="inline-actions">
+              <button type="submit" id="add-item-submit">Add item</button>
+            </div>
+          </form>
+        </section>
+
+        <section class="panel stack wide">
+          <h2>Recent changes</h2>
+          <div id="transaction-list" class="stack compact"></div>
+        </section>
+      </main>
+    </div>
+    <div id="toast"></div>
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>

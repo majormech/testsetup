@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DFD Supply Inventory · Issue Inventory</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body data-page="issue">
+    <div class="shell">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">DFD Supply</p>
+          <h1>Issue Inventory</h1>
+          <p class="subtitle">Issue stock from main inventory to a station using item selection or scanned codes.</p>
+        </div>
+        <nav class="top-nav">
+          <a href="/index.html">Main Page</a>
+          <a href="/inventory.html">Inventory Actions</a>
+          <a href="/restock.html">Restock Page</a>
+          <a href="/search.html">Search Page</a>
+          <a href="/how-to.html">How-To Guide</a>
+        </nav>
+      </header>
+
+      <main class="layout">
+        <section class="panel stack wide">
+          <h2>Issue station requests</h2>
+          <p class="subtitle">Stations with active requests are red. Stations with no active requests are green.</p>
+          <div id="issue-station-list" class="stack compact"></div>
+        </section>
+
+        <section class="panel stack wide">
+          <h2>Recent changes</h2>
+          <div id="transaction-list" class="stack compact"></div>
+        </section>
+      </main>
+    </div>
+    <div id="toast"></div>
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>
