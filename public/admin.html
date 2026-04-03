@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DFD Admin</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body data-page="admin">
+    <div class="shell slim">
+      <section class="panel stack wide">
+        <h1>Admin Settings</h1>
+        <p class="subtitle">Manage accounts, page assignments, and system notification settings.</p>
+        <p id="admin-access-note" class="helper">Enter the worker admin key or sign in with an admin account.</p>
+        <label>Admin key (if configured in worker)
+          <input id="admin-key" placeholder="Enter admin key" />
+        </label>
+        <form id="admin-settings-form" class="stack compact">
+          <label>Supply officer email<input name="supplyOfficerEmail" type="email" /></label>
+          <label>Admin emails (comma separated)<input name="adminEmails" /></label>
+          <button type="submit">Save settings</button>
+        </form>
+      </section>
+      <section class="panel stack wide">
+        <h2>Create User</h2>
+        <form id="admin-user-create-form" class="stack compact">
+          <label>Display name<input name="displayName" type="text" /></label>
+          <label>Username<input name="username" type="text" /></label>
+          <label>Badge barcode / QR code<input name="badgeCode" type="text" /></label>
+          <label>Starting 4-digit PIN<input name="pin" type="password" inputmode="numeric" maxlength="4" /></label>
+          <label class="checkbox-label">
+            <input name="isAdmin" type="checkbox" />
+            <span>Give this user account manager / admin access</span>
+          </label>
+          <div data-role="page-list" class="admin-page-grid"></div>
+          <button type="submit">Create user</button>
+        </form>
+      </section>
+      <section class="panel stack wide">
+        <h2>Stations</h2>
+        <p class="subtitle">Add new stations or remove stations that do not have inventory or request history yet.</p>
+        <form id="admin-station-form" class="stack compact">
+          <label>Station name<input name="stationName" type="text" placeholder="Station 8" /></label>
+          <label>Station code<input name="stationCode" type="text" placeholder="ST08" /></label>
+          <button type="submit">Add station</button>
+        </form>
+        <div id="admin-station-list" class="admin-user-list"></div>
+      </section>
+      <section class="panel stack wide">
+        <div class="admin-errors__header">
+          <div>
+            <h2>Users and Page Assignments</h2>
+            <p class="subtitle">Edit usernames, badge codes, page access, and reset PINs.</p>
+          </div>
+        </div>
+        <div id="admin-user-list" class="admin-user-list"></div>
+      </section>
+      <section class="panel stack wide">
+        <div class="admin-errors__header">
+          <div>
+            <h2>Error Tracking</h2>
+            <p class="subtitle">Recent application errors from the browser and API.</p>
+          </div>
+          <button type="button" id="refresh-errors" class="secondary">Refresh errors</button>
+        </div>
+        <div id="error-summary" class="error-summary-grid">
+          <article class="error-summary-card">
+            <span class="helper">Last 24 hours</span>
+            <strong id="error-count-24h">0</strong>
+          </article>
+          <article class="error-summary-card">
+            <span class="helper">Last 7 days</span>
+            <strong id="error-count-7d">0</strong>
+          </article>
+          <article class="error-summary-card">
+            <span class="helper">Client errors</span>
+            <strong id="error-count-client">0</strong>
+          </article>
+          <article class="error-summary-card">
+            <span class="helper">Server errors</span>
+            <strong id="error-count-server">0</strong>
+          </article>
+        </div>
+        <div id="error-empty-state" class="helper">No tracked errors yet.</div>
+        <div id="error-list" class="error-list"></div>
+      </section>
+    </div>
+    <div id="toast"></div>
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>

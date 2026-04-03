@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Station Supply Request</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body data-page="request">
+    <div class="shell slim">
+      <section class="panel stack wide">
+        <h1>Station Inventory Request</h1>
+        <p class="subtitle">Select a station, then submit and track requests from one shared page.</p>
+        <label>Station
+          <select id="request-station-select"></select>
+        </label>
+        <p id="request-station-empty" class="helper hidden">No stations are available yet. Ask an admin to add one on the admin page.</p>
+        <div class="station-request-guide stack compact">
+          <h2>How to use this page</h2>
+          <ul>
+            <li><strong>Request items:</strong> Select a station, choose <strong>Request item</strong>, add one or more items and quantities, then submit.</li>
+            <li><strong>Edit a request:</strong> Use <strong>Modify request</strong> on any open request to update item quantities or add/remove items.</li>
+            <li><strong>Cancel a request:</strong> Use <strong>Cancel request</strong> when a request is no longer needed.</li>
+            <li><strong>Track progress:</strong> Requests update live as items are issued and when the request is completed.</li>
+          </ul>
+          <h3>Status color key</h3>
+          <ul class="request-color-legend">
+            <li><span class="legend-chip legend-chip--pending" aria-hidden="true"></span><strong>Red/Pink:</strong> Pending request.</li>
+            <li><span class="legend-chip legend-chip--partial" aria-hidden="true"></span><strong>Yellow:</strong> Partially completed.</li>
+            <li><span class="legend-chip legend-chip--complete" aria-hidden="true"></span><strong>Green:</strong> Completed request.</li>
+            <li><span class="legend-chip legend-chip--canceled" aria-hidden="true"></span><strong>Gray:</strong> Canceled request.</li>
+          </ul>
+        </div>
+        <div class="stack compact">
+          <button type="button" id="open-request-modal">Request item</button>
+          <div id="recent-requests" class="request-history-list"></div>
+        </div>
+      </section>
+    </div>
+    <div id="toast"></div>
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>
